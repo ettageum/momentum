@@ -18,7 +18,7 @@ let something;
 console.log(amIFat);
 console.log(something);
 
-//Array
+// #2.5 Array
 
 const mon = "mon";
 const tue = "tue";
@@ -30,6 +30,10 @@ const sun = "sun";
 
 const daysOfWeek = [mon, tue, wed, thu, fri, sat];
 const nonsense = [1, 2, "hello", false, null, true, undefined, "Allen"];
+
+console.log(nonsense);
+
+nonsense[2] = "buy";
 
 console.log(daysOfWeek, nonsense);
 
@@ -77,3 +81,129 @@ console.log(player);
 player.lastName = "Ye";
 player.points = player.points + 10;
 console.log(player);
+
+// #2.7 function; 계속 반복해서 사용할 수 있도록 설정하는 코드 조각; capsulate some codes to use repeatably.
+
+// alert("Hello");
+
+console.log("Hello my name is Allen");
+console.log("Hello my name is Harry");
+console.log("Hello my name is James");
+console.log("Hello my name is Yuhta");
+
+function sayHello(nameOfPerson, age) {
+  console.log(
+    "Hi! my name is " + nameOfPerson + ". I'm " + age + " years old."
+  );
+}
+
+sayHello();
+sayHello("nico", 23);
+sayHello("Allen", 35);
+sayHello("Yuhta", 25);
+
+function plus(a, b) {
+  console.log(a + b);
+}
+
+plus();
+plus(3, 4);
+
+function devide(a, b) {
+  console.log(a / b);
+}
+plus(20, 5);
+devide(20, 5);
+
+// 내가 원하는 형태로 function을 만들기 위한 방법.
+
+const playerRe = {
+  name: "Allen",
+  sayHelloRe: function (ohterPersonsName) {
+    console.log("Hello! " + ohterPersonsName + ". Nice to meet you.");
+  },
+};
+
+console.log(playerRe.name);
+playerRe.sayHelloRe("Lynn");
+playerRe.sayHelloRe("Allen");
+
+// #2.10 recap II
+
+const playyyer = {
+  name: "nico",
+  age: 27,
+};
+
+console.log(playyyer.name);
+console.log(playyyer, console);
+playyyer.name = "Allen";
+console.log(playyyer);
+playyyer.sexy = "soon";
+console.log(playyyer);
+
+const calculator = {
+  add: function (a, b) {
+    console.log(a + b);
+  },
+  mie: function (a, b) {
+    console.log(a - b);
+  },
+  divide: function (a, b) {
+    console.log(a / b);
+  },
+  times: function (a, b) {
+    console.log(a * b);
+  },
+  powerof: function (a, b) {
+    console.log(a ** b);
+  },
+};
+calculator.add(4, 5);
+calculator.mie(9, 4);
+calculator.divide(10, 5);
+calculator.times(4, 6);
+calculator.powerof(2, 5);
+
+// console.log를 사용하지 않고 function을 사용하는 게 좋다.
+
+// #2.11 Returns
+
+const age = 96;
+function calculateKrAge(ageOfForeigner) {
+  return ageOfForeigner + 2;
+}
+
+const krAge = calculateKrAge(age);
+
+console.log(krAge);
+
+const callculator = {
+  plus: function (c, d) {
+    return c + d;
+  },
+  minus: function (c, d) {
+    return c - d;
+  },
+  devide: function (c, d) {
+    return c / d;
+  },
+  times: function (c, d) {
+    return c * d;
+  },
+  powerof: function (c, d) {
+    return c ** d;
+  },
+};
+
+const plusResult = callculator.plus(9, 3);
+const minusResult = callculator.minus(plusResult, 10);
+const devideResult = callculator.devide(10, minusResult);
+const timesResult = callculator.times(devideResult, 10);
+const powerofResult = callculator.powerof(2, 4);
+
+console.log(plusResult);
+console.log(minusResult);
+console.log(devideResult);
+console.log(timesResult);
+console.log(powerofResult);

@@ -7,7 +7,9 @@ const thisIsHowNamingVariablesInJs = "camelCase";
 console.log(a + b);
 console.log(a * b);
 console.log(a / b);
-// +는 텍스트 간에 결합에서도 쓰이지만 *이나 /는 그대로의 의미로만 사용하니 이런 차이가 발생하나 봐.
+
+//? +는 텍스트 간에 결합에서도 쓰이지만 *이나 /는 그대로의 의미로만 사용하니 이런 차이가 발생하나 봐.
+
 console.log("hello " + myName);
 
 myName = "Azur";
@@ -18,9 +20,9 @@ let something;
 console.log(amIFat);
 console.log(something);
 
-// always const, sometimes let, never var.
+//* always const, sometimes let, never var.
 
-// #2.5 Array
+//* #2.5 Array
 
 const mon = "mon";
 const tue = "tue";
@@ -39,12 +41,12 @@ nonsense[2] = "buy";
 
 console.log(daysOfWeek, nonsense);
 
-// Get Item from Array
+//* Get Item from Array
 console.log(daysOfWeek[5]);
 console.log(daysOfWeek[10]);
 console.log(nonsense[4]);
 
-// Add noe more item to the array
+//* Add noe more item to the array
 daysOfWeek.push(sun);
 console.log(daysOfWeek);
 
@@ -54,13 +56,13 @@ console.log(toBuy);
 
 // Objects
 
-// player 에 대한 데이터를 만들기 위해 중복된 것들이 많이 나온다.
+//? player 에 대한 데이터를 만들기 위해 중복된 것들이 많이 나온다. 더 나은 방법은 없을까?
 const playerNmae = "Allen";
 const playerPoints = 256;
 const playerHandsome = true;
 const playerFat = "little";
 
-// Array does'nt say what is item means.
+//* Array does'nt say what this item means.
 // const player = ["Allen", "256", true, "little"];
 // plyer[0] == name
 // player[1] == points
@@ -75,7 +77,7 @@ console.log(player);
 console.log(player.name);
 console.log(player["name"]);
 
-// There is no problem to update inside of const;object item.
+//* There is no problem to update inside of const;object item.
 player.name = "ettageum";
 player.points = 512;
 console.log(player);
@@ -117,7 +119,7 @@ function devide(a, b) {
 plus(20, 5);
 devide(20, 5);
 
-// 내가 원하는 형태로 function을 만들기 위한 방법.
+//* 내가 원하는 형태로 function을 만들기 위한 방법.
 
 const playerRe = {
   name: "Allen",
@@ -213,3 +215,30 @@ console.log(minusResult);
 console.log(devideResult);
 console.log(timesResult);
 console.log(powerofResult);
+
+//* #2.13 Conditions
+console.log("#-----2.13 Conditions-----");
+
+//! [prompt] no more uses today. because this is ugly, and some of browser blocks pop-up window.
+//todo const ifAge = prompt("How old are you?");
+const ifAge = parseInt(prompt("How old are you?"));
+
+//todo console.log(ifAge, parseInt(ifAge));
+// console.log(ifAge);
+//? whatever you typing, result of upon log's type will be string. why? don't know. but we can change the type of value.
+//* So Now we can check which one is bigger than other one. and if someone type NaN, we know about it.
+
+// console.log(isNaN(ifAge));
+
+//* Want to more than 1 conditions to make
+if (isNaN(ifAge) || ifAge < 0) {
+  console.log("Please write a real positive number");
+} else if (ifAge < 18) {
+  console.log("You are too young.");
+} else if (ifAge >= 18 && ifAge <= 50) {
+  //* [&&] is AND operator; means need to both side ture, otherwise false.
+  //* [||] is OR operator; it needs only one side be true.
+  console.log("You can drink!");
+} else {
+  console.log("You should worry to drink");
+}
